@@ -189,8 +189,8 @@ class MyApp extends connect(store)(LitElement) {
 
     <!-- This gets hidden on a small screen-->
     <nav class="toolbar-list">
-    <a selected?="${_page === 'view1'}" href="/view1">View One</a>
-    <a selected?="${_page === 'view2'}" href="/view2">View Two</a>
+    <a selected?="${_page === 'view1'}" href="/view1">SmagYun</a>
+    <a selected?="${_page === 'view2'}" href="/view2">Spoggy</a>
     <a selected?="${_page === 'view3'}" href="/view3">View Three</a>
     <a selected?="${_page === 'view4'}" href="/view4">View 4</a>
     </nav>
@@ -200,8 +200,8 @@ class MyApp extends connect(store)(LitElement) {
     <app-drawer opened="${_drawerOpened}"
     on-opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}">
     <nav class="drawer-list">
-    <a selected?="${_page === 'view1'}" href="/view1">View One</a>
-    <a selected?="${_page === 'view2'}" href="/view2">View Two</a>
+    <a selected?="${_page === 'view1'}" href="/view1">SmagYun</a>
+    <a selected?="${_page === 'view2'}" href="/view2">Spoggy</a>
     <a selected?="${_page === 'view3'}" href="/view3">View Three</a>
     <a selected?="${_page === 'view4'}" href="/view4">View 4</a>
     </nav>
