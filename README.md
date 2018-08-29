@@ -1,3 +1,68 @@
+
+# Spoggy3
+Une Pwa / Webapp ES6 basée sur [Polymer 3](https://www.polymer-project.org/3.0/docs/devguide/feature-overview) avec les modules [prpl-server](https://github.com/Polymer/prpl-server) / express pour nodejs.
+
+
+Prerequis nodejs > 10
+# Installation
+
+```
+git clone https://github.com/scenaristeur/spoggy3.git
+cd spoggy3
+npm install
+```
+
+# Execution
+- serveur local :
+```
+npm start
+```
+- serveur local sur un autre port :
+```
+npm start -- --hostname 0.0.0.0 --port 4444
+```
+- tests :
+```
+npm run test
+```
+
+Available scripts (https://polymer.github.io/pwa-starter-kit/setup/)
+In the app’s root directory you can run:
+
+npm start to run the application in development mode.
+npm run test to run the application’s unit and integration tests (see the see the testing section for more details. To run just the unit or integration tests, both npm run test:unit and npm run test:integration are available.
+npm run build to build your application for production (see the building and deploying section for more details).
+npm run serve:static or npm run serve:prpl-server to serve the built application (see the building and deploying section for more details).
+The complete list of scripts can be found in the package.json file.
+
+
+
+# Building for prpl-server
+To run the build:
+
+npm run build:prpl-server
+This will populate the server/build/ directory:
+
+server/
+├── build/
+|   └── es5-bundled/
+|   └── es6-bundled/
+|   └── esm-bundled/
+|   └── polymer.json
+├── app.yaml
+├── package-lock.json
+└── package.json
+
+# Previewing prpl-server
+To preview the build using prpl-server locally:
+```
+npm run serve:prpl-server
+```
+#Deploying prpl-server
+After building, the contents of server/ contains all the files and configuration necessary to run the app in production. The provided server/package.json specifies server dependencies and the start command which can be used on almost any hosting service that supports Node.js.
+
+
+
 [![Built with pwa–starter–kit](https://img.shields.io/badge/built_with-pwa–starter–kit_-blue.svg)](https://github.com/Polymer/pwa-starter-kit "Built with pwa–starter–kit")
 [![Build status](https://api.travis-ci.org/Polymer/pwa-starter-kit.svg?branch=master)](https://travis-ci.org/Polymer/pwa-starter-kit)
 
