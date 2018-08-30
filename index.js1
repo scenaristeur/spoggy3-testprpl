@@ -1,0 +1,56 @@
+var compression = require('compression')
+var express = require('express');
+var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+
+
+/* CONFIGURATION DU SERVEUR WEB */
+//var port = process.env.PORT || 3000;
+//var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8079,
+ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+
+
+server.listen(port, ip, function() {
+  console.log('Server running on http://%s:%s', ip, port);
+  //  console.log('Server listening at port %d', port);
+});
+
+// Routing
+app.use(compression({filter: shouldCompress}))
+
+function shouldCompress (req, res) {
+  if (req.headers['x-no-compression']) {
+    // don't compress responses with this request header
+    return false
+  }
+
+  // fallback to standard filter function
+  return compression.filter(req, res)
+}
+
+console.log(io);
+
+
+io.sockets.on('connection', function (socket) {
+  console.log("connexion de "+socket.id)
+  users.push(socket.id);
+  //  socket.room = rooms[0];
+  // send client to room 1
+  //  socket.join(socket.room);
+  updateFreq();
+
+  //socket.emit('initrooms', freq);
+  io.sockets.emit('initrooms', freq);
+});
+
+
+
+//app.use(express.static(__dirname + '/public'));
+/*app.get('*', function(req, res){
+  //  console.log(req.originalUrl);
+  //  console.log(res);
+  //nécessaire pour ne pas avoir des cannot get sur http://127.0.0.1:3000/view2
+  res.sendFile("/index.html", {root: '.'});
+});*/
