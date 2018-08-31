@@ -46,8 +46,14 @@ const loadPage = (page) => (dispatch) => {
     case 'chateau-robots':
     import('../components/chateau-robots.js');
     break;
-    case 'spoggy-smag0':
-    import('../components/spoggy-smag0.js');
+    case 'smag-smag0':
+    import('../components/smag-smag0.js');
+    break;
+    case 'smag-spoggy':
+    import('../components/smag-spoggy.js');
+    break;
+    case 'smag-smagyun':
+    import('../components/smag-smagyun.js');
     break;
     case 'smag-accueil':
     import('../components/smag-accueil.js');

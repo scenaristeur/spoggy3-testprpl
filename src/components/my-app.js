@@ -156,6 +156,9 @@ class MyApp extends connect(store)(LitElement) {
       color: var(--app-drawer-text-color);
       text-align: center;
     }
+    footer a {
+      color: var(--app-header-selected-color);
+    }
 
     /* Wide layout: when the viewport width is bigger than 460px, layout
     changes to a wide layout. */
@@ -191,10 +194,10 @@ class MyApp extends connect(store)(LitElement) {
     <nav class="toolbar-list">
 
     <a selected?="${_page === 'chateau-robots'}" href="/chateau-robots">Le Château des Robots</a>
-    <a selected?="${_page === 'spoggy-smag0'}" href="/spoggy-smag0">Smag0</a>
-        <a selected?="${_page === 'smag-accueil'}" href="/smag-accueil">Accueil</a>
-    <a selected?="${_page === 'view1'}" href="/view1">SmagYun</a>
-    <a selected?="${_page === 'view2'}" href="/view2">Spoggy</a>
+    <a selected?="${_page === 'smag-smag0'}" href="/smag-smag0">Smag0</a>
+    <a selected?="${_page === 'smag-accueil'}" href="/smag-accueil">Accueil</a>
+    <a selected?="${_page === 'smag-smagyun'}" href="/smag-smagyun">SmagYun</a>
+    <a selected?="${_page === 'smag-spoggy'}" href="/smag-spoggy">Spoggy</a>
 
     </nav>
     </app-header>
@@ -203,11 +206,11 @@ class MyApp extends connect(store)(LitElement) {
     <app-drawer opened="${_drawerOpened}"
     on-opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}">
     <nav class="drawer-list">
-      <a selected?="${_page === 'smag-accueil'}" href="/smag-accueil">Accueil</a>
+    <a selected?="${_page === 'smag-accueil'}" href="/smag-accueil">Accueil</a>
     <a selected?="${_page === 'chateau-robots'}" href="/chateau-robots">Le Château des Robots</a>
-    <a selected?="${_page === 'spoggy-smag0'}" href="/spoggy-smag0">Smag0</a>
-    <a selected?="${_page === 'view1'}" href="/view1">SmagYun</a>
-    <a selected?="${_page === 'view2'}" href="/view2">Spoggy</a>
+    <a selected?="${_page === 'smag-smag0'}" href="/smag-smag0">Smag0</a>
+    <a selected?="${_page === 'smag-smagyun'}" href="/smag-smagyun">SmagYun</a>
+    <a selected?="${_page === 'smag-spoggy'}" href="/smag-spoggy">Spoggy</a>
 
     </nav>
     </app-drawer>
@@ -216,15 +219,33 @@ class MyApp extends connect(store)(LitElement) {
     <main role="main" class="main-content">
     <smag-accueil class="page" active?="${_page === 'smag-accueil'}"></smag-accueil>
     <chateau-robots class="page" active?="${_page === 'chateau-robots'}"></chateau-robots>
-    <spoggy-smag0 class="page" active?="${_page === 'spoggy-smag0'}"></spoggy-smag0>
-    <my-view1 class="page" active?="${_page === 'view1'}"></my-view1>
-    <my-view2 class="page" active?="${_page === 'view2'}"></my-view2>
+    <smag-smag0 class="page" active?="${_page === 'smag-smag0'}"></smag-smag0>
+    <smag-smagyun class="page" active?="${_page === 'smag-smagyun'}"></smag-smagyun>
+    <smag-spoggy class="page" active?="${_page === 'smag-spoggy'}"></smag-spoggy>
     <my-view404 class="page" active?="${_page === 'view404'}"></my-view404>
     </main>
+    <nav class="toolbar-list">
+
+    <a selected?="${_page === 'chateau-robots'}" href="/chateau-robots">Le Château des Robots</a>
+    <a selected?="${_page === 'smag-smag0'}" href="/smag-smag0">Smag0</a>
+    <a selected?="${_page === 'smag-accueil'}" href="/smag-accueil">Accueil</a>
+    <a selected?="${_page === 'smag-smagyun'}" href="/smag-smagyun">SmagYun</a>
+    <a selected?="${_page === 'smag-spoggy'}" href="/smag-spoggy">Spoggy</a>
+
+    </nav>
+
+
 
     <footer>
-    <p>Made with &hearts; by the Polymer team.</p>
+    <p>Fait avec &hearts; par la Smag0 team.</p>
+    <p>mail : <a href="mailto:scenaristeur@gmail.com">scenaristeur@gmail.com</a></p>
+    <p>twitter : <a href="http://twitter.com/Dfaveris" target="_blank">@Dfaveris</p>
+
     </footer>
+
+
+
+
 
     <snack-bar active?="${_snackbarOpened}">
     You are now ${_offline ? 'offline' : 'online'}.</snack-bar>

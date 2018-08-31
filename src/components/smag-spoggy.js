@@ -14,12 +14,12 @@ import { PageViewElement } from './page-view-element.js';
 // These are the shared styles needed by this element.
 import { SharedStyles } from './shared-styles.js';
 
-class SpoggySmag0 extends PageViewElement {
+class SmagSpoggy extends PageViewElement {
   _render(props) {
     return html`
       ${SharedStyles}
       <section>
-        <h2>Smag0</h2>
+        <h2 id="top">Spoggy</h2>
         <p>This is a text-only page.</p>
         <p>It doesn't do anything other than display some static text.</p>
       </section>
@@ -34,4 +34,4 @@ class SpoggySmag0 extends PageViewElement {
   }
 }
 
-window.customElements.define('spoggy-smag0', SpoggySmag0);
+window.customElements.define('smag-spoggy', SmagSpoggy);

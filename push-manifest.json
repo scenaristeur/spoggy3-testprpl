@@ -58,12 +58,12 @@
   }
 
   ,
-  "/spoggy-smag0": {
+  "/smag-smag0": {
     "src/components/my-app.js": {
       "type": "script",
       "weight": 1
     },
-    "src/components/spoggy-smag0.js": {
+    "src/components/smag-smag0.js": {
       "type": "script",
       "weight": 1
     },
@@ -80,6 +80,38 @@
       "weight": 1
     },
     "src/components/smag-accueil.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js": {
+      "type": "script",
+      "weight": 1
+    }
+  }
+
+  ,
+  "/smag-spoggy": {
+    "src/components/my-app.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/components/smag-spoggy.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js": {
+      "type": "script",
+      "weight": 1
+    }
+  }
+
+  ,
+  "/smag-smagyun": {
+    "src/components/my-app.js": {
+      "type": "script",
+      "weight": 1
+    },
+    "src/components/smag-smagyun.js": {
       "type": "script",
       "weight": 1
     },
