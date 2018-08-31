@@ -189,10 +189,13 @@ class MyApp extends connect(store)(LitElement) {
 
     <!-- This gets hidden on a small screen-->
     <nav class="toolbar-list">
+
+    <a selected?="${_page === 'chateau-robots'}" href="/chateau-robots">Le Château des Robots</a>
+    <a selected?="${_page === 'spoggy-smag0'}" href="/spoggy-smag0">Smag0</a>
+        <a selected?="${_page === 'smag-accueil'}" href="/smag-accueil">Accueil</a>
     <a selected?="${_page === 'view1'}" href="/view1">SmagYun</a>
     <a selected?="${_page === 'view2'}" href="/view2">Spoggy</a>
-    <a selected?="${_page === 'view3'}" href="/view3">View Three</a>
-    <a selected?="${_page === 'view4'}" href="/view4">View 4</a>
+
     </nav>
     </app-header>
 
@@ -200,19 +203,22 @@ class MyApp extends connect(store)(LitElement) {
     <app-drawer opened="${_drawerOpened}"
     on-opened-changed="${e => store.dispatch(updateDrawerState(e.target.opened))}">
     <nav class="drawer-list">
+      <a selected?="${_page === 'smag-accueil'}" href="/smag-accueil">Accueil</a>
+    <a selected?="${_page === 'chateau-robots'}" href="/chateau-robots">Le Château des Robots</a>
+    <a selected?="${_page === 'spoggy-smag0'}" href="/spoggy-smag0">Smag0</a>
     <a selected?="${_page === 'view1'}" href="/view1">SmagYun</a>
     <a selected?="${_page === 'view2'}" href="/view2">Spoggy</a>
-    <a selected?="${_page === 'view3'}" href="/view3">View Three</a>
-    <a selected?="${_page === 'view4'}" href="/view4">View 4</a>
+
     </nav>
     </app-drawer>
 
     <!-- Main content -->
     <main role="main" class="main-content">
+    <smag-accueil class="page" active?="${_page === 'smag-accueil'}"></smag-accueil>
+    <chateau-robots class="page" active?="${_page === 'chateau-robots'}"></chateau-robots>
+    <spoggy-smag0 class="page" active?="${_page === 'spoggy-smag0'}"></spoggy-smag0>
     <my-view1 class="page" active?="${_page === 'view1'}"></my-view1>
     <my-view2 class="page" active?="${_page === 'view2'}"></my-view2>
-    <my-view3 class="page" active?="${_page === 'view3'}"></my-view3>
-    <my-view4 class="page" active?="${_page === 'view4'}"></my-view4>
     <my-view404 class="page" active?="${_page === 'view404'}"></my-view404>
     </main>
 
