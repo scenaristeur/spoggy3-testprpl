@@ -19,9 +19,14 @@ class SmagSpoggy extends PageViewElement {
     return html`
       ${SharedStyles}
       <section>
-        <h2 id="top">Spoggy</h2>
-        <p>This is a text-only page.</p>
-        <p>It doesn't do anything other than display some static text.</p>
+      <h2>Spoggy</h2>
+      <p>
+      Spoggy est une interface de partage d'informations.
+      Basée sur le principe des cartes mentales (on créé un noeud pour chaque concept et établit ensuite les liens entre ces concepts),
+      Spoggy permet d'enregistrer facilement les idées qui nous passent par la tête pour ensuite les exporter et les partager par mail.
+      Parmi les autres possibilités qu'offre Spoggy : confection de cartes multi-utilisateurs en mode collaboratif
+      Spoggy permet également d'interagir de visualiser des données issues d'enpoint Sparql... d'en insérer...
+      </p>
       </section>
       <section>
         <h2>Welcome</h2>

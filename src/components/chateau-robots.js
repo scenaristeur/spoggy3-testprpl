@@ -19,17 +19,43 @@ class ChateauRobots extends PageViewElement {
     return html`
       ${SharedStyles}
       <section>
-        <h2>Le château des robots</h2>
-        <p>This is a text-only page.</p>
-        <p>It doesn't do anything other than display some static text.</p>
+      <h2>Le Château des Robots</h2>
+      <p>Le Château des Robots est un lieu ouvert au public, un showroom où les entreprises peuvent présenter leurs innovations.
+      C'est également un lieu d'expérimentations, proposant des ateliers de découverte des dernières innovations, des ateliers de programmation.
+      C'est aussi un lieu de résidence pour les étudiants qui souhaitent approfondir et / ou partager leurs connaissances dans les domaines aussi variés que l'intelligence artificielle,
+      l'échange de données ouvertes...
+      </p>
       </section>
+
       <section>
-        <h2>Welcome</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac nisi orci. Maecenas sollicitudin diam in diam efficitur cursus. Morbi sollicitudin in justo tincidunt placerat. Integer tincidunt elementum nisi, eu ornare dolor lacinia eget. Fusce pulvinar massa eget odio placerat, commodo molestie ipsum tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse porttitor id purus eu cursus. Suspendisse arcu nulla, mattis vel hendrerit et, malesuada a elit. Nam at diam ornare, aliquet est sed, malesuada metus. Cras nec enim vel nibh tincidunt euismod ut et enim. Etiam pharetra eros in sodales iaculis. Duis sagittis urna et cursus mollis. Cras tempor rutrum est. Praesent sollicitudin ligula at laoreet placerat. Praesent tortor dui, semper in sapien non, pharetra luctus turpis.</p>
+        <h2>Un lieu public</h2>
+        <p>Le Château des Robots, c'est d'abord un espace ouvert au public, où chacun peut :</br>
+        <ul>
+        <li>tester les innovations proposées
+         par les entreprises de pointe dans les domaine de la robotique, des objets connectés, des interactions homme - machine...</li>
+         <li>découvrir les dernières innovations technologiques comme l'intelligence artificielle, le machine learning, l'impression 3D, la voiture autonome...</li>
+         </ul>
+        </p>
       </section>
+
       <section>
-        <p>Vestibulum at est ex. Aenean id ligula id nibh dictum laoreet. Etiam non semper erat. Pellentesque eu justo rhoncus diam vulputate facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat metus ex, vel fringilla massa tincidunt sit amet. Nunc facilisis bibendum tristique. Mauris commodo, dolor vitae dapibus fermentum, odio nibh viverra lorem, eu cursus diam turpis et sapien. Nunc suscipit tortor a ligula tincidunt, id hendrerit tellus sollicitudin.</p>
+        <h2>Un lieu d'expérimentations</h2>
+        <p>De nombreux matériels & outils sont à votre disposition pour vous permettre d'apprendre à votre rythme,
+         ce qui se cache derrière la programmation des robots ou des objets connectés.</p>
       </section>
+
+      <section>
+        <h2>Une communauté de passionnés</h2>
+        <p>Parce que les robots, les objets connectés, l'intelligence artificielle envahissent notre quotidien,
+         il nous paraît important de partager les savoirs qui s'y rapportent...</p>
+         <p>grp fb tw ...</p>
+      </section>
+
+      <section>
+        <h2>Résider au Château des Robots</h2>
+        <p>-> réservation airbnb</p>
+      </section>
+
     `;
   }
 }
