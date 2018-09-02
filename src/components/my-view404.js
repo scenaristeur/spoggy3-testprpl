@@ -17,13 +17,18 @@ import { SharedStyles } from './shared-styles.js';
 class MyView404 extends PageViewElement {
   _render(props) {
     return html`
-      ${SharedStyles}
-      <section>
-        <h2>Oops! You hit a 404</h2>
-        <p>The page you're looking for doesn't seem to exist. Head back
-           <a href="/">home</a> and try again?
-        </p>
-      </section>
+    ${SharedStyles}
+    <section>
+    <h2>Oops! Tu t'es pris une 404</h2>
+    <center>
+    <p>
+    <img src="../../images/Peugeot-404-300x208.jpg">
+    </p>
+    <p>
+    La page que tu as tenté d'afficher semble ne pas exister. <br>
+    Repasse par <a href="/">la case départ</a> et ne touche pas 20 000 Francs.
+    </p></center>
+    </section>
     `
   }
 }
