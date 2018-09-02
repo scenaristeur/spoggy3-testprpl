@@ -39,10 +39,12 @@ The complete list of scripts can be found in the package.json file.
 
 # Building for prpl-server
 To run the build:
-
+```
 npm run build:prpl-server
+```
 This will populate the server/build/ directory:
 
+```
 server/
 ├── build/
 |   └── es5-bundled/
@@ -52,6 +54,7 @@ server/
 ├── app.yaml
 ├── package-lock.json
 └── package.json
+```
 
 # Previewing prpl-server
 To preview the build using prpl-server locally:
