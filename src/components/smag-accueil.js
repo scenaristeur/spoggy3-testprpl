@@ -13,7 +13,8 @@ import { PageViewElement } from './page-view-element.js';
 
 // These are the shared styles needed by this element.
 import { SharedStyles } from './shared-styles.js';
-import './spoggy-graph.js';
+import './spoggy-graph/spoggy-graph.js';
+import './spoggy-input/spoggy-input.js';
 
 class SmagAccueil extends PageViewElement {
   _render(props) {
@@ -27,8 +28,11 @@ class SmagAccueil extends PageViewElement {
     </section>
 
     <section>
-    <spoggy-graph></spoggy-graph>
+    <spoggy-input></spoggy-input>
+    </section>
 
+    <section>
+    <spoggy-graph></spoggy-graph>
     </section>
 
     <section>

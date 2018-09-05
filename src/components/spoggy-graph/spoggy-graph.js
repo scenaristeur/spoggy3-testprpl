@@ -11,30 +11,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 import { LitElement, html } from '@polymer/lit-element';
 
 // These are the elements needed by this element.
-import { plusIcon, minusIcon } from './my-icons.js';
+import { plusIcon, minusIcon } from './../my-icons.js';
 
 // These are the shared styles needed by this element.
-import { ButtonSharedStyles } from './button-shared-styles.js';
+import { ButtonSharedStyles } from './../button-shared-styles.js';
 import { Network, DataSet, Node, Edge, IdType } from 'vis';
 import  'evejs/dist/eve.min.js';
+import { GraphAgent } from 'agents/GraphAgent.js'
 // This is a reusable element. It is not connected to the store. You can
 // imagine that it could just as well be a third-party element that you
 // got from someone else.
 class SpoggyGraph extends LitElement {
   _render(props) {
     return html`
-      ${ButtonSharedStyles}
-      <style>
-        span { width: 20px; display: inline-block; text-align: center; font-weight: bold;}
-      </style>
-      <div>
-        <p>
-          Clicked: <span>${props.clicks}</span> times.
-          Value is <span>${props.value}</span>.
-          <button on-click="${() => this._onIncrement()}" title="Add 1">${plusIcon}</button>
-          <button on-click="${() => this._onDecrement()}" title="Minus 1">${minusIcon}</button>
-        </p>
-      </div>
+    ${ButtonSharedStyles}
+    <style>
+    span { width: 20px; display: inline-block; text-align: center; font-weight: bold;}
+    </style>
+    <div>
+    <p>
+    Graph
+    Clicked: <span>${props.clicks}</span> times.
+    Value is <span>${props.value}</span>.
+    <button on-click="${() => this._onIncrement()}" title="Add 1">${plusIcon}</button>
+    <button on-click="${() => this._onDecrement()}" title="Minus 1">${minusIcon}</button>
+    </p>
+    </div>
     `;
   }
 
@@ -49,20 +51,24 @@ class SpoggyGraph extends LitElement {
     super();
     this.clicks = 0;
     this.value = 0;
-        console.log("vis",vis);
-            console.log("eve",eve);
+    console.log("vis",vis);
+    console.log("eve",eve);
+    this.agentGraph = new GraphAgent('agentGraph', this);
+    console.log(this.agentGraph);
   }
 
   _onIncrement() {
     this.value++;
     this.clicks++;
-    this.dispatchEvent(new CustomEvent('counter-incremented'));
+    //  this.dispatchEvent(new CustomEvent('counter-incremented'));
+    this.agentGraph.send('agentInput', {type: 'inc' });
   }
 
   _onDecrement() {
     this.value--;
     this.clicks++;
-    this.dispatchEvent(new CustomEvent('counter-decremented'));
+    //  this.dispatchEvent(new CustomEvent('counter-decremented'));
+    this.agentGraph.send('agentInput', {type: 'dec' });
   }
 }
 
