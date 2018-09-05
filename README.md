@@ -66,7 +66,12 @@ After building, the contents of server/ contains all the files and configuration
 
 --------------------
 socket.io https://github.com/chanlito/socket.io-controllers
+https://github.com/Polymer/pwa-starter-kit/issues/121
 
+
+npm run build:prpl-server
+
+npm run serve:prpl-server-express
 
 ------------------
 
