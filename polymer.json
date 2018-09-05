@@ -9,6 +9,7 @@
     "manifest.json",
     "node_modules/@webcomponents/webcomponentsjs/**",
     "node_modules/socket.io-client/**",
+    "node_modules/evejs/**",
     "push-manifest.json"
   ],
   "builds": [

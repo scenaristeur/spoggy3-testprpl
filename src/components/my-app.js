@@ -272,7 +272,7 @@ class MyApp extends connect(store)(LitElement) {
     const urlSocket = window.location.host; //name+':3000'
     const socket = io(urlSocket);
     console.log(socket);
-  /*  console.log(eve);*/
+    console.log(eve);
   }
 
   _firstRendered() {
