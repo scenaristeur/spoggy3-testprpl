@@ -10,6 +10,7 @@ const io = require('socket.io')(server, {
   serveClient: false,
   wsEngine: 'ws' // uws is not supported since it is a native module
 });
+//var io = require('socket.io')(server);
 const port = process.env.PORT || 5000;
 
 io.on('connect', onConnect);

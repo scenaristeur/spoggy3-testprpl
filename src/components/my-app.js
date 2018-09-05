@@ -34,6 +34,8 @@ import '@polymer/app-layout/app-scroll-effects/effects/waterfall.js';
 import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import { menuIcon } from './my-icons.js';
 import './snack-bar.js';
+import 'socket.io-client/dist/socket.io.slim.js';
+/*import 'evejs/dist/eve.min.js';*/
 
 class MyApp extends connect(store)(LitElement) {
   _render({appTitle, _page, _drawerOpened, _snackbarOpened, _offline}) {
@@ -267,6 +269,10 @@ class MyApp extends connect(store)(LitElement) {
     // To force all event listeners for gestures to be passive.
     // See https://www.polymer-project.org/3.0/docs/devguide/settings#setting-passive-touch-gestures
     setPassiveTouchGestures(true);
+    const urlSocket = window.location.host; //name+':3000'
+    const socket = io(urlSocket);
+    console.log(socket);
+  /*  console.log(eve);*/
   }
 
   _firstRendered() {

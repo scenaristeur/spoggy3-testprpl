@@ -4,6 +4,7 @@
   "sources": [
     "images/**/*"
   ],
+  "autoBasePath": true,
   "extraDependencies": [
     "manifest.json",
     "node_modules/@webcomponents/webcomponentsjs/**",

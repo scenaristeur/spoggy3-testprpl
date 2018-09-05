@@ -69,9 +69,11 @@ socket.io https://github.com/chanlito/socket.io-controllers
 https://github.com/Polymer/pwa-starter-kit/issues/121
 
 
-npm run build:prpl-server
+dev : npm start
 
-npm run serve:prpl-server-express
+build static : npm run build:prpl-server
+
+run static : npm run serve:prpl-server-express
 
 ------------------
 
