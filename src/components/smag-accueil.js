@@ -13,6 +13,7 @@ import { PageViewElement } from './page-view-element.js';
 
 // These are the shared styles needed by this element.
 import { SharedStyles } from './shared-styles.js';
+import './spoggy-graph.js';
 
 class SmagAccueil extends PageViewElement {
   _render(props) {
@@ -23,6 +24,11 @@ class SmagAccueil extends PageViewElement {
     <h2 id="top">Smag0</h2>
     <p>"Ca serait bien, un robot qui range ma chambre !" -- Simon F. 2013</p>
     <p>Smag0 regroupe un ensemble de projets dont l'objectif principal est de faciliter les interactions entre les humains et les machines.</p>
+    </section>
+
+    <section>
+    <spoggy-graph></spoggy-graph>
+
     </section>
 
     <section>

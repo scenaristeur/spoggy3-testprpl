@@ -13,6 +13,8 @@ import { PageViewElement } from './page-view-element.js';
 
 // These are the shared styles needed by this element.
 import { SharedStyles } from './shared-styles.js';
+// These are the elements needed by this element.
+import './spoggy-graph.js';
 
 class MyView1 extends PageViewElement {
   _render(props) {

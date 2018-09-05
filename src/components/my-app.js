@@ -35,6 +35,8 @@ import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import { menuIcon } from './my-icons.js';
 import './snack-bar.js';
 import 'socket.io-client/dist/socket.io.slim.js';
+//import  'evejs/dist/eve.min.js';
+
 /*import 'evejs/dist/eve.min.js';*/
 
 class MyApp extends connect(store)(LitElement) {
@@ -271,8 +273,10 @@ class MyApp extends connect(store)(LitElement) {
     setPassiveTouchGestures(true);
     const urlSocket = window.location.host; //name+':3000'
     const socket = io(urlSocket);
-    console.log(socket);
-    console.log(eve);
+    console.log("socket",socket);
+
+
+
   }
 
   _firstRendered() {
