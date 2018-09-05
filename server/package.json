@@ -10,6 +10,10 @@
     "evejs": "^0.5.0",
     "express": "^4.16.3",
     "prpl-server": "^1.2.0",
-    "socket.io": "^2.1.1"
+    "socket.io": "^2.1.1",
+    "vis": "^4.21.0"
+  },
+  "devDependencies": {
+    "@types/vis": "^4.21.7"
   }
 }
