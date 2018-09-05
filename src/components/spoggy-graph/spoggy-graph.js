@@ -8,6 +8,7 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
+
 import { LitElement, html } from '@polymer/lit-element';
 
 // These are the elements needed by this element.
@@ -130,7 +131,7 @@ class SpoggyGraph extends LitElement {
 
   //////////////////////////////////////////////////////////////////
   networkDivInitialize(container, app){
-    console.log(app.centralGravityValueDefault)
+    //console.log(app.centralGravityValueDefault)
     // create an array with nodes
     var nodes = new vis.DataSet([
       {id: "node1", label: 'Spoggy', color: 'rgb(195,238,0)'},
@@ -253,11 +254,11 @@ class SpoggyGraph extends LitElement {
         avoidOverlap: 0
       },
       repulsion: {
-        centralGravity: app.centralGravityValueDefault,  //0.001, //0.001 ? A quoi sert cette valeur ?
-        springLength: app.springLengthValueDefault,   // 220, //220 (//200 //300)
-        springConstant: app.springConstantValueDefault, //0.01, //0.01
-        nodeDistance:  app.nodeDistanceValueDefault, //150, //100 //350
-        damping: app.dampingValueDefault, ///0.08
+        centralGravity:0.0001, // app.centralGravityValueDefault,  //0.001, //0.001 ? A quoi sert cette valeur ?
+        springLength: 127,//app.springLengthValueDefault,   // 220, //220 (//200 //300)
+        springConstant: 0.04, //app.springConstantValueDefault, //0.01, //0.01
+        nodeDistance:  100, //app.nodeDistanceValueDefault, //150, //100 //350
+        damping: 0.08, //app.dampingValueDefault, ///0.08
       },
       hierarchicalRepulsion: {
         centralGravity: 0.0,
