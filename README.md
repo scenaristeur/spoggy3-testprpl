@@ -110,3 +110,33 @@ gives you the following features:
 - [x] Setup Safari testing on Travis.
 - [x] Deploy all templates as demos.
 - [ ] Update to latest [Material Web Components](https://github.com/material-components/material-components-web-components).
+
+
+# Polymer3 lifecycle
+
+Reaction 	Description
+constructor 	Called when the element is upgraded (that is, when an element is created, or when a previously-created element becomes defined). The constructor is a logical place to set default values, and to manually set up event listeners for the element itself.
+connectedCallback 	Called when the element is added to a document. Can be called multiple times during the lifetime of an element.
+
+Uses include adding document-level event listeners. (For listeners local to the element, you can use annotated event listeners.)
+disconnectedCallback 	Called when the element is removed from a document. Can be called multiple times during the lifetime of an element.
+
+Uses include removing event listeners added in connectedCallback.
+ready 	Called during Polymer-specific element initialization. Called once, the first time the element is attached to the document. For details, see Polymer element initialization.
+attributeChangedCallback 	Called when any of the element's attributes are changed, appended, removed, or replaced.
+
+Use to handle attribute changes that don't correspond to declared properties. (For declared properties, Polymer handles attribute changes automatically as described in attribute deserialization.)
+
+For each reaction, the first line of your implementation must be a call to the superclass constructor or reaction. For the constructor, this is simply the super() call.
+
+constructor() {
+  super();
+  // …
+}
+
+For other reactions, call the superclass method. This is required so Polymer can hook into the element's lifecycle.
+
+connectedCallback() {
+  super.connectedCallback();
+  // …
+}
