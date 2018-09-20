@@ -12,11 +12,11 @@
       "type": "script",
       "weight": 1
     },
-    "src/components/spoggy-graph.js": {
+    "node_modules/socket.io-client/dist/socket.io.js": {
       "type": "script",
       "weight": 1
     },
-    "src/components/agents/graph-agent.js": {
+    "node_modules/evejs/dist/eve.min.js": {
       "type": "script",
       "weight": 1
     }

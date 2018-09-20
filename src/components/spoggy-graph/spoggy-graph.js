@@ -132,7 +132,7 @@ class SpoggyGraph extends LitElement {
 
       background-position: 20px 3px;
       background-repeat: no-repeat;
-      background-image: url("img/network/cross.png");
+      background-image: url("../../images/network/cross.png");
       cursor: pointer;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
@@ -178,7 +178,7 @@ class SpoggyGraph extends LitElement {
     }
 
     div.vis-network div.vis-manipulation div.vis-button.vis-back {
-      background-image: url("img/network/backIcon.png");
+      background-image: url("../../images/network/backIcon.png");
     }
 
     div.vis-network div.vis-manipulation div.vis-button.vis-none:hover {
@@ -202,12 +202,12 @@ class SpoggyGraph extends LitElement {
     }
 
     div.vis-network div.vis-manipulation div.vis-button.vis-add {
-      background-image: url("img/network/addNodeIcon.png");
+      background-image: url("../../images/network/addNodeIcon.png");
     }
 
     div.vis-network div.vis-manipulation div.vis-button.vis-edit,
     div.vis-network div.vis-edit-mode div.vis-button.vis-edit {
-      background-image: url("img/network/editIcon.png");
+      background-image: url("../../images/network/editIcon.png");
     }
 
     div.vis-network div.vis-edit-mode div.vis-button.vis-edit.vis-edit-mode {
@@ -216,11 +216,11 @@ class SpoggyGraph extends LitElement {
     }
 
     div.vis-network div.vis-manipulation div.vis-button.vis-connect {
-      background-image: url("img/network/connectIcon.png");
+      background-image: url("../../images/network/connectIcon.png");
     }
 
     div.vis-network div.vis-manipulation div.vis-button.vis-delete {
-      background-image: url("img/network/deleteIcon.png");
+      background-image: url("../../images/network/deleteIcon.png");
     }
     /* top right bottom left */
     div.vis-network div.vis-manipulation div.vis-label,
@@ -266,37 +266,37 @@ class SpoggyGraph extends LitElement {
     }
 
     div.vis-network div.vis-navigation div.vis-button.vis-up {
-      background-image: url("img/network/upArrow.png");
+      background-image: url("../../images/network/upArrow.png");
       bottom:50px;
       left:55px;
     }
     div.vis-network div.vis-navigation div.vis-button.vis-down {
-      background-image: url("img/network/downArrow.png");
+      background-image: url("../../images/network/downArrow.png");
       bottom:10px;
       left:55px;
     }
     div.vis-network div.vis-navigation div.vis-button.vis-left {
-      background-image: url("img/network/leftArrow.png");
+      background-image: url("../../images/network/leftArrow.png");
       bottom:10px;
       left:15px;
     }
     div.vis-network div.vis-navigation div.vis-button.vis-right {
-      background-image: url("img/network/rightArrow.png");
+      background-image: url("../../images/network/rightArrow.png");
       bottom:10px;
       left:95px;
     }
     div.vis-network div.vis-navigation div.vis-button.vis-zoomIn {
-      background-image: url("img/network/plus.png");
+      background-image: url("../../images/network/plus.png");
       bottom:10px;
       right:15px;
     }
     div.vis-network div.vis-navigation div.vis-button.vis-zoomOut {
-      background-image: url("img/network/minus.png");
+      background-image: url("../../images/network/minus.png");
       bottom:10px;
       right:55px;
     }
     div.vis-network div.vis-navigation div.vis-button.vis-zoomExtends {
-      background-image: url("img/network/zoomExtends.png");
+      background-image: url("../../images/network/zoomExtends.png");
       bottom:50px;
       right:15px;
     }
@@ -322,11 +322,11 @@ class SpoggyGraph extends LitElement {
     <div id="node-popUp">
     <span id="node-operation">node</span> <br>
     <table style="margin:auto;">
+    <!--<tr>
+    <td>id</td><td><input id="node-id" value="" /></td>
+    </tr>-->
     <tr>
-    <td>id</td><td><input id="node-id" value="new value" /></td>
-    </tr>
-    <tr>
-    <td>label</td><td><input id="node-label" value="new value" /></td>
+    <td>Label</td><td><input id="node-label" value="" autofocus /></td>
     </tr>
     </table>
     <input type="button" value="save" id="node-saveButton" />
@@ -337,7 +337,7 @@ class SpoggyGraph extends LitElement {
     <span id="edge-operation">edge</span> <br>
     <table style="margin:auto;">
     <tr>
-    <td>label</td><td><input id="edge-label" value="new value" /></td>
+    <td>Label</td><td><input id="edge-label" value="" autofocus /></td>
     </tr></table>
     <input type="button" value="save" id="edge-saveButton" />
     <input type="button" value="cancel" id="edge-cancelButton" />
