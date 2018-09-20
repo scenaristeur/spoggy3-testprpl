@@ -17,7 +17,7 @@ import { plusIcon, minusIcon } from './../my-icons.js';
 import { ButtonSharedStyles } from './../button-shared-styles.js';
 import { Network, DataSet, Node, Edge, IdType } from 'vis';
 import  'evejs/dist/eve.min.js';
-import { InputAgent } from 'agents/InputAgent.js'
+import { InputAgent } from './agents/InputAgent.js'
 // This is a reusable element. It is not connected to the store. You can
 // imagine that it could just as well be a third-party element that you
 // got from someone else.
