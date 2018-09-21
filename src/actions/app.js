@@ -57,6 +57,8 @@ const loadPage = (page) => (dispatch) => {
     break;
     case 'smag-accueil':
     import('../components/smag-accueil.js');
+  //  import('../components/spoggy-graph.js');
+  //  import('../components/spoggy-graph/agents/GraphAgent.js');
     break;
     default:
     page = 'view404';

@@ -40,8 +40,11 @@ The complete list of scripts can be found in the package.json file.
 # Building for prpl-server
 To run the build:
 ```
-npm run build:prpl-server
+npm run build
+
 ```
+(plus complet que npm run build:prpl-server)
+
 This will populate the server/build/ directory:
 
 ```
