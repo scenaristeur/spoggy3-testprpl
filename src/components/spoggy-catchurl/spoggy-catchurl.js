@@ -16,11 +16,11 @@ import { plusIcon, minusIcon } from './../my-icons.js';
 // These are the shared styles needed by this element.
 import { ButtonSharedStyles } from './../button-shared-styles.js';
 import  'evejs/dist/eve.min.js';
-import { InputAgent } from './agents/InputAgent.js'
+import { CatchurlAgent } from './agents/CatchurlAgent.js'
 // This is a reusable element. It is not connected to the store. You can
 // imagine that it could just as well be a third-party element that you
 // got from someone else.
-class SpoggyInput extends LitElement {
+class SpoggyCatchurl extends LitElement {
   _render(props) {
     return html`
     ${ButtonSharedStyles}
@@ -29,12 +29,8 @@ class SpoggyInput extends LitElement {
     </style>
     <div>
     <p>
-    Input </br>
-    Clicked: <span>${props.clicks}</span> times.
-    Value is <span>${props.value}</span>.
-    <button on-click="${() => this._onIncrement()}" title="Add 1">${plusIcon}</button>
-    <button on-click="${() => this._onDecrement()}" title="Minus 1">${minusIcon}</button>
-    </p>
+    CATCH URL </br>
+  </p>
     </div>
     `;
   }
@@ -48,29 +44,17 @@ class SpoggyInput extends LitElement {
 
   constructor() {
     super();
-    this.clicks = 0;
-    this.value = 0;
+
 
   }
   _firstRendered() {
   //  console.log("eve",eve);
-    this.agentInput = new InputAgent('agentInput', this);
-    //console.log(this.agentInput);
-    this.agentInput.send('agentApp', {type: 'dispo', name: 'agentInput' });
-  }
-  _onIncrement() {
-    this.value++;
-    this.clicks++;
-  //  this.dispatchEvent(new CustomEvent('counter-incremented'));
-    this.agentInput.send('agentGraph', {type: 'inc' });
+    this.agentCatchurl = new CatchurlAgent('agentCatchurl', this);
+  //  console.log(this.agentCatchurl);
+    this.agentCatchurl.send('agentApp', {type: 'dispo', name: 'agentCatchurl' });
+    console.log("catchurl")
   }
 
-  _onDecrement() {
-    this.value--;
-    this.clicks++;
-  //  this.dispatchEvent(new CustomEvent('counter-decremented'));
-    this.agentInput.send('agentGraph', {type: 'dec' });
-  }
 }
 
-window.customElements.define('spoggy-input', SpoggyInput);
+window.customElements.define('spoggy-catchurl', SpoggyCatchurl);

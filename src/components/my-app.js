@@ -38,6 +38,8 @@ import './snack-bar.js';
 //import  'evejs/dist/eve.min.js';
 
 /*import 'evejs/dist/eve.min.js';*/
+import  'evejs/dist/eve.min.js';
+import { AppAgent } from './agents/AppAgent.js'
 
 class MyApp extends connect(store)(LitElement) {
   _render({appTitle, _page, _drawerOpened, _snackbarOpened, _offline}) {
@@ -284,6 +286,9 @@ class MyApp extends connect(store)(LitElement) {
     installOfflineWatcher((offline) => store.dispatch(updateOffline(offline)));
     installMediaQueryWatcher(`(min-width: 460px)`,
     (matches) => store.dispatch(updateLayout(matches)));
+    console.log("eve",eve);
+    this.agentApp = new AppAgent('agentApp', this);
+    console.log(this.agentApp);
   }
 
   _didRender(properties, changeList) {

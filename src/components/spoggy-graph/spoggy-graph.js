@@ -9,7 +9,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 */
 
 import { LitElement, html } from '@polymer/lit-element';
-//import { Network, DataSet, Node, Edge, IdType } from 'vis';
+// ne fonctionne pas avec Chrome ??? import { Network, DataSet, Node, Edge, IdType } from 'vis';
+
+import  'evejs/dist/eve.min.js';
+import { GraphAgent } from './agents/GraphAgent.js'
 
 // This element is *not* connected to the Redux store.
 class SpoggyGraph extends LitElement {
@@ -360,6 +363,7 @@ class SpoggyGraph extends LitElement {
     super();
     var seed = 2;
     var app = this;
+
     // create an array with nodes
     var nodes = new vis.DataSet([
       {id: 1, label: 'Node 1'},
@@ -526,6 +530,14 @@ class SpoggyGraph extends LitElement {
     setDefaultLocale();
     draw();
   }*/
+
+  _firstRendered() {
+  //  console.log("vis",vis);
+  //  console.log("eve",eve);
+    this.agentGraph = new GraphAgent('agentGraph', this);
+  //  console.log(this.agentGraph);
+    this.agentGraph.send('agentApp', {type: 'dispo', name: 'agentGraph' });
+  }
 
 }
 

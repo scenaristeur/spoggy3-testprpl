@@ -27,7 +27,8 @@ store.addReducers({
 import { SharedStyles } from './shared-styles.js';
 import './spoggy-graph/spoggy-graph.js';
 //import './spoggy-graph.js';
-//import './spoggy-input/spoggy-input.js';
+import './spoggy-input/spoggy-input.js';
+import './spoggy-catchurl/spoggy-catchurl.js';
 // These are the elements needed by this element.
 import './counter-element.js';
 
@@ -47,16 +48,16 @@ class SmagAccueil extends PageViewElement {
     </spoggy-graph>
     </section>
     two-->
-    <section>BOB</section>
-    <section>BIB</section>
+    <section><spoggy-catchurl></spoggy-catchurl></section>
+    <section><spoggy-input></spoggy-input></section>
 
-    one
     <section>
     <spoggy-graph>
-    loo
+    Espace de chargement du graph ...<br>
+    Si le graphe ne se charge pas, consultez la console (Ctrl + Maj + I)
     </spoggy-graph>
     </section>
-    two
+
     <section>
       <p>
         <counter-element value="${props._value}" clicks="${props._clicks}"
@@ -65,7 +66,7 @@ class SmagAccueil extends PageViewElement {
         </counter-element>
       </p>
     </section>
-    tri
+
 
     `;
   }
