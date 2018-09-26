@@ -9,7 +9,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 */
 
 import { LitElement, html } from '@polymer/lit-element';
-import { Network, DataSet, Node, Edge, IdType } from 'vis';
+//import { Network, DataSet, Node, Edge, IdType } from 'vis';
+ //import * as Vis from 'vis';
 
 // This element is *not* connected to the Redux store.
 class SpoggyGraph extends LitElement {
