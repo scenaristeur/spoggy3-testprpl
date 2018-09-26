@@ -60,6 +60,9 @@ const loadPage = (page) => (dispatch) => {
   //  import('../components/spoggy-graph.js');
   //  import('../components/spoggy-graph/agents/GraphAgent.js');
     break;
+    case 'spoggy-help':
+    import('../components/spoggy-help.js');
+    break;
     default:
     page = 'view404';
     import('../components/my-view404.js');

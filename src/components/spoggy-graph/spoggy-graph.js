@@ -539,6 +539,168 @@ class SpoggyGraph extends LitElement {
     this.agentGraph.send('agentApp', {type: 'dispo', name: 'agentGraph' });
   }
 
+
+  catchTriplet(message){
+  // A REVOIR ET REMPLACER PAR catchTripletsV2() ??
+  //  console.log(message.length);
+  //message=message.trim();
+  //  var tripletString = message.substring(2).trim().split(" ");
+  //  var tripletString = message.trim().split(" ");
+  // les noeuds existent-ils ?
+  var sujetNode = this.network.body.data.nodes.get({
+    filter: function(node){
+      //    console.log(node);
+      return (node.label == message[0] );
+    }
+  });
+  if (sujetNode.length == 0){
+    this.network.body.data.nodes.add({label: message[0], type: "node", x:2*Math.random(), y:2*Math.random() });
+  }
+  var objetNode = this.network.body.data.nodes.get({
+    filter: function(node){
+      //    console.log(node);
+      return (node.label == message[2]);
+    }
+  });
+  //  console.log(sujetNode);
+  //  console.log(objetNode);
+  // sinon, on les créé
+
+  if (objetNode.length == 0){
+    this.network.body.data.nodes.add({ label: message[2], type: "node", x:-2*Math.random(), y:-2*Math.random() });
+  }
+  // maintenant ils doivent exister, pas très po=ropre comme méthode , à revoir
+  sujetNode = this.network.body.data.nodes.get({
+    filter: function(node){
+      return (node.label == message[0] );
+    }
+  });
+  objetNode = this.network.body.data.nodes.get({
+    filter: function(node){
+      return (node.label == message[2]);
+    }
+  });
+  var actionSujet = {};
+  actionSujet.type = "newNode";
+  actionSujet.data = sujetNode[0];
+  //  actionsToSendTemp.push(actionSujet);
+  //    this.addAction(actionSujet);
+
+  var actionObjet = {};
+  actionObjet.type = "newNode";
+  actionObjet.data = objetNode[0];
+  //  actionsToSendTemp.push(actionObjet);
+  //  this.addAction(actionObjet);
+
+
+  // maintenant, on peut ajouter l'edge
+  this.network.body.data.edges.add({
+    label: message[1],
+    from : sujetNode[0].id,
+    to : objetNode[0].id,
+    type: "edge",
+  });
+
+  //on récupère ce edge pour l'envoyer au serveur
+  var edge = this.network.body.data.edges.get({
+    filter: function(edge) {
+      return (edge.from == sujetNode[0].id && edge.to == objetNode[0].id && edge.label == message[1]);
+    }
+  });
+  var actionEdge = {};
+  actionEdge.type = "newEdge";
+  actionEdge.data = edge;
+  //  this.addAction(actionEdge);
+  let actionstosend = [];
+  actionstosend.push(actionSujet);
+  actionstosend.push(actionObjet);
+  actionstosend.push(actionEdge);
+  this.agentGraph.send('agentSocket', {type: "newActions", actions: actionstosend});
+  this.agentGraph.send('agentSparqlUpdate', {type: "newActions", actions: actionstosend});
+  console.log(sujetNode[0])
+  //this.network.redraw();
+  this.network.moveTo({    position: {x:0, y:0}});
+/*  this.network.moveTo({
+position: {x:sujetNode[0].x, y:sujetNode[0].y},
+scale: 1,
+offset: {x:20, y:20},
+animation: {
+duration: 3,
+easingFunction: 'easeInOutCubic'
+}
+});*/
+
+  //  actionsToSendTemp.push(actionEdge);
+  //console.log(actionsToSendTemp);
+  //  return actionsToSendTemp;
+}
+
+
+newGraph(){
+  //network.body.data.nodes.clear();
+  //network.body.data.edges.clear();
+  let network = this.network;
+
+  var graphname = prompt("Comment nommer ce nouveau graphe ?", "Spoggy-Graph_"+Date.now());
+  var nodeName = {
+    label: graphname,
+    shape: "star",
+    color: "green",
+    type: "node"
+  };
+  var nodeGraph = {
+    label: "Graph",
+    /*    shape: "star",
+    color: "red",*/
+    type: "node"
+  };
+  network.body.data.nodes.clear();
+  network.body.data.edges.clear();
+  var nodes = network.body.data.nodes.add([nodeName, nodeGraph]);
+
+  var edge = {
+    from: nodes[0],
+    to: nodes[1],
+    arrows: "to",
+    label: "type"
+  }
+  network.body.data.edges.add(edge);
+  /* seulement en cas de synchro, mais difficile de newgrapher en synchro ?
+  var action = {};
+  action.type = "newNode";
+  action.data = nodeName;
+  this.addAction(action);
+
+  action = {};
+  action.type = "newNode";
+  action.data = nodeGraph;
+  this.addAction(action);
+
+  action = {};
+  action.type = "newEdge";
+  action.data = edge;
+  this.addAction(action);
+
+  action = {};
+  action.type = "changeGraph";
+  action.data = graphname;
+  this.addAction(action);
+  if(app.socket != undefined){
+  app.socket.graph = graphname;
+  console.log(app.socket);
+}
+*/
+
+//app.socket.emit('newGraph', graphname);
+/*
+//document.getElementById('importPopUp').style.display = 'block';
+app.$.importPopUp.style.display = 'block';
+
+var filepicker = app.$.filepicker;
+filepicker.addEventListener('change', handleFileSelect.bind(app), false);
+filepicker.network = network;*/
+}
+
 }
 
 window.customElements.define('spoggy-graph', SpoggyGraph);

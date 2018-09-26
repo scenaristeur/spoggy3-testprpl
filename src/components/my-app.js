@@ -204,6 +204,7 @@ class MyApp extends connect(store)(LitElement) {
     <a selected?="${_page === 'smag-accueil'}" href="/smag-accueil">Accueil</a>
     <a selected?="${_page === 'smag-smagyun'}" href="/smag-smagyun">SmagYun</a>
     <a selected?="${_page === 'smag-spoggy'}" href="/smag-spoggy">Spoggy</a>
+    <a selected?="${_page === 'spoggy-help'}" href="/spoggy-help">Aide/Help</a>
 
     </nav>
     </app-header>
@@ -217,6 +218,7 @@ class MyApp extends connect(store)(LitElement) {
     <a selected?="${_page === 'smag-smag0'}" href="/smag-smag0">Smag0</a>
     <a selected?="${_page === 'smag-smagyun'}" href="/smag-smagyun">SmagYun</a>
     <a selected?="${_page === 'smag-spoggy'}" href="/smag-spoggy">Spoggy</a>
+    <a selected?="${_page === 'spoggy-help'}" href="/spoggy-help">Aide/Help</a>
 
     </nav>
     </app-drawer>
@@ -228,6 +230,7 @@ class MyApp extends connect(store)(LitElement) {
     <smag-smag0 class="page" active?="${_page === 'smag-smag0'}"></smag-smag0>
     <smag-smagyun class="page" active?="${_page === 'smag-smagyun'}"></smag-smagyun>
     <smag-spoggy class="page" active?="${_page === 'smag-spoggy'}"></smag-spoggy>
+    <spoggy-help class="page" active?="${_page === 'spoggy-help'}"></spoggy-help>
     <my-view404 class="page" active?="${_page === 'view404'}"></my-view404>
     </main>
     <nav class="toolbar-list">
@@ -237,6 +240,7 @@ class MyApp extends connect(store)(LitElement) {
     <a selected?="${_page === 'smag-accueil'}" href="/smag-accueil">Accueil</a>
     <a selected?="${_page === 'smag-smagyun'}" href="/smag-smagyun">SmagYun</a>
     <a selected?="${_page === 'smag-spoggy'}" href="/smag-spoggy">Spoggy</a>
+    <a selected?="${_page === 'spoggy-help'}" href="/spoggy-help">Aide/Help</a>
 
     </nav>
 

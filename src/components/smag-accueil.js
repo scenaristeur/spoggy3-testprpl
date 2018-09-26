@@ -28,26 +28,17 @@ import { SharedStyles } from './shared-styles.js';
 import './spoggy-graph/spoggy-graph.js';
 //import './spoggy-graph.js';
 import './spoggy-input/spoggy-input.js';
-import './spoggy-catchurl/spoggy-catchurl.js';
+
+import './spoggy-socket/spoggy-socket.js';
 // These are the elements needed by this element.
 import './counter-element.js';
+
+import './spoggy-catchurl/spoggy-catchurl.js';
 
 class SmagAccueil extends PageViewElement {
   _render(props) {
     return html`
     ${SharedStyles}
-
-    <!--  <section>
-    <spoggy-input></spoggy-input>
-    test1
-    </section>-->
-    <!--one
-    <section>
-    <spoggy-graph>
-    loo
-    </spoggy-graph>
-    </section>
-    two-->
 
     <section><spoggy-input></spoggy-input></section>
 
@@ -59,15 +50,16 @@ class SmagAccueil extends PageViewElement {
     </section>
 
     <section>
-      <p>
-        <counter-element value="${props._value}" clicks="${props._clicks}"
-            on-counter-incremented="${() => store.dispatch(increment())}"
-            on-counter-decremented="${() => store.dispatch(decrement())}">
-        </counter-element>
-      </p>
+    <p>
+    <counter-element value="${props._value}" clicks="${props._clicks}"
+    on-counter-incremented="${() => store.dispatch(increment())}"
+    on-counter-decremented="${() => store.dispatch(decrement())}">
+    </counter-element>
+    </p>
     </section>
-    <section><spoggy-catchurl></spoggy-catchurl></section>
 
+    <section><spoggy-socket></spoggy-socket></section>
+    <section><spoggy-catchurl></spoggy-catchurl></section>
     `;
   }
 }

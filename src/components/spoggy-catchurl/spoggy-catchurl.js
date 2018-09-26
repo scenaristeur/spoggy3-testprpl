@@ -8,6 +8,12 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
+/*
+Module pour attrapper les parametres d'url :
+    //http://127.0.0.1:8081/?endpoint=http://127.0.0.1:3030&source=http://test.json&graph=plop&query=SELECT * WHERE {?s ?p ?o}
+
+    */
+
 import { LitElement, html } from '@polymer/lit-element';
 
 // These are the elements needed by this element.
@@ -36,6 +42,7 @@ class SpoggyCatchurl extends LitElement {
     Graph : ${props.graph}</br>
     Source : ${props.source}</br>
     </p>
+    <p>test : http://127.0.0.1:8081/?endpoint=http://127.0.0.1:3030&source=http://test.json&graph=plop&query=SELECT * WHERE {?s ?p ?o}</p>
     </div>
     `;
   }
@@ -58,12 +65,11 @@ class SpoggyCatchurl extends LitElement {
     this.agentCatchurl.send('agentApp', {type: 'dispo', name: 'agentCatchurl' });
     console.log("catchurl");
     this.params = this.recupParams();
-    //http://127.0.0.1:8081/?endpoint=http://127.0.0.1:3030&source=http://test.json&graph=plop
+
     this.endpoint = this.params.endpoint;
     this.query = this.params.query;
     this.graph = this.params.graph;
     this.source  = this.params.source;
-
 
     console.log('endpoint', this.endpoint);
     console.log('query', this.query);
@@ -71,9 +77,12 @@ class SpoggyCatchurl extends LitElement {
     console.log('source', this.source);
   }
 
-  testObserver(params){
-    console.log("changement params ",params)
-  }
+  set route (params) {
+      console.log("PARA", params);
+      /*fetch(`some/thing/${route.path}`).then(resp => {
+        this.someDeclaredProperty = somethingBasedOn(resp)
+      })*/
+    }
 
   recupParams(){
     var params = (function(a) {
