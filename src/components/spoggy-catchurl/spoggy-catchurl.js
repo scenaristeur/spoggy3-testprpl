@@ -30,30 +30,66 @@ class SpoggyCatchurl extends LitElement {
     <div>
     <p>
     CATCH URL </br>
-  </p>
+    Params are <br>
+    Endpoint : ${props.endpoint}</br>
+    Query : ${props.query}</br>
+    Graph : ${props.graph}</br>
+    Source : ${props.source}</br>
+    </p>
     </div>
     `;
   }
 
   static get properties() { return {
-    /* The total number of clicks you've done. */
-    clicks: Number,
-    /* The current value of the counter. */
-    value: Number
+    params: Object,
+    endpoint: String,
+    query: String,
+    graph: String,
+    source: String
   }};
 
   constructor() {
     super();
-
-
   }
   _firstRendered() {
-  //  console.log("eve",eve);
+    //  console.log("eve",eve);
     this.agentCatchurl = new CatchurlAgent('agentCatchurl', this);
-  //  console.log(this.agentCatchurl);
+    //  console.log(this.agentCatchurl);
     this.agentCatchurl.send('agentApp', {type: 'dispo', name: 'agentCatchurl' });
-    console.log("catchurl")
+    console.log("catchurl");
+    this.params = this.recupParams();
+    //http://127.0.0.1:8081/?endpoint=http://127.0.0.1:3030&source=http://test.json&graph=plop
+    this.endpoint = this.params.endpoint;
+    this.query = this.params.query;
+    this.graph = this.params.graph;
+    this.source  = this.params.source;
+
+
+    console.log('endpoint', this.endpoint);
+    console.log('query', this.query);
+    console.log('graph', this.graph);
+    console.log('source', this.source);
   }
+
+  testObserver(params){
+    console.log("changement params ",params)
+  }
+
+  recupParams(){
+    var params = (function(a) {
+      if (a == "") return {};
+      var b = {};
+      for (var i = 0; i < a.length; ++i)
+      {        var p=a[i].split('=', 2);
+      if (p.length == 1)
+      b[p[0]] = "";
+      else
+      b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+    }
+    return b;
+  })(window.location.search.substr(1).split('&'));
+  return params;
+}
 
 }
 

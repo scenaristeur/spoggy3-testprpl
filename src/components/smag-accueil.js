@@ -48,7 +48,7 @@ class SmagAccueil extends PageViewElement {
     </spoggy-graph>
     </section>
     two-->
-    <section><spoggy-catchurl></spoggy-catchurl></section>
+
     <section><spoggy-input></spoggy-input></section>
 
     <section>
@@ -66,7 +66,7 @@ class SmagAccueil extends PageViewElement {
         </counter-element>
       </p>
     </section>
-
+    <section><spoggy-catchurl></spoggy-catchurl></section>
 
     `;
   }
