@@ -25,8 +25,8 @@ store.addReducers({
 });
 // These are the shared styles needed by this element.
 import { SharedStyles } from './shared-styles.js';
-//import './spoggy-graph/spoggy-graph.js';
-import './spoggy-graph.js';
+import './spoggy-graph/spoggy-graph.js';
+//import './spoggy-graph.js';
 //import './spoggy-input/spoggy-input.js';
 // These are the elements needed by this element.
 import './counter-element.js';

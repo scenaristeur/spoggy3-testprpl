@@ -72,6 +72,10 @@ socket.io https://github.com/chanlito/socket.io-controllers
 https://github.com/Polymer/pwa-starter-kit/issues/121
 visjs import : https://stackoverflow.com/questions/42007419/angular2-how-to-import-visjs
 
+------------------------
+# RUNNING PRPL SERVER
+
+
 npm install && cd server && npm install && cd ..
 dev : npm start
 
